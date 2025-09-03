@@ -300,3 +300,93 @@ La tesis propone combinar campos potenciales con arquitectura BDI para crear un 
 - Deseos: Incluyen llegar al objetivo y mantener seguridad
 
 - Intenciones: Deciden entre comportamientos reactivos y deliberativos
+
+## 🤖 🧠 Solución BDI al Problema de la Herradura en Campos Potenciales
+
+### 📋 Descripción del Problema
+
+El problema clásico de campos de potencial artificial presenta una limitación significativa: los agentes pueden quedar atrapados en mínimos locales, especialmente en configuraciones complejas como la "herradura" de obstáculos. Este código implementa una solución inteligente mediante la arquitectura BDI (Beliefs-Desires-Intentions).
+
+## 🎯 Solución Implementada
+
+### 🔧 Componentes Clave del Código
+
+1. Parámetros del Campo Potencial
+
+```Python
+K_ATRACTIVO = 0.5      # Constante de atracción al objetivo
+K_REPULSIVO = 3.0      # Constante de repulsión de obstáculos
+RADIO_REPULSION = 2.5  # Radio de influencia de los obstáculos
+PASO = 0.1             # Tamaño del paso de movimiento
+UMBRAL_CONVERGENCIA = 0.1  # Distancia mínima al objetivo
+```
+
+2. Arquitectura BDI del Agente
+
+Creencias (Beliefs) - Percepción del entorno:
+
+```Python
+def actualizar_creencias(self):
+    self.distancia_objetivo = np.linalg.norm(self.objetivo - self.posicion)
+    self.distancia_min_obstaculo = min([np.linalg.norm(obs - self.posicion) for obs in self.obstaculos])
+    
+    # Detección de estancamiento
+    if len(self.historial_posiciones) > 10:
+        desplazamiento = np.linalg.norm(ultimas_posiciones[-1] - ultimas_posiciones[0])
+        if desplazamiento < 0.5:
+            self.contador_estancamiento += 1
+            if self.contador_estancamiento > 5:
+                self.estancado = True
+```
+
+Deseos (Desires) - Objetivos del agente:
+
+```Python
+self.deseo_principal = "alcanzar_objetivo"
+self.deseos_secundarios = ["evitar_obstaculos", "optimizar_trayectoria"]
+```
+Intenciones (Intentions) - Estrategias de acción:
+
+```Python
+def deliberar(self):
+    if self.distancia_objetivo < UMBRAL_CONVERGENCIA:
+        self.intencion_actual = "terminar"
+    elif self.estancado:
+        self.intencion_actual = "buscar_alternativa"  # 🚀 Estrategia clave
+    else:
+        self.intencion_actual = "seguir_campo_potencial"
+```
+
+3. Mecanismo de Escape de Mínimos Locales
+
+La innovación principal está en la estrategia buscar_alternativa:
+
+```Python
+def ejecutar(self):
+    elif self.intencion_actual == "buscar_alternativa":
+        gradiente = self.calcular_gradiente()
+        perpendicular = np.array([-gradiente[1], gradiente[0]])  # Vector perpendicular
+        self.posicion += perpendicular * PASO * 2  # Movimiento lateral
+        self.estancado = False  # Reiniciar estado de estancamiento
+```
+
+## 🎨 Visualización y Resultados
+
+El código genera dos tipos de visualizaciones:
+
+- Animación GIF del proceso completo
+
+
+- Imagen estática de la trayectoria final
+
+### 📊 Resultados y Efectividad
+
+#### ✅ Ventajas de la Solución BDI
+
+- Detección Inteligente: El agente reconoce cuando está estancado
+
+- Estrategia Adaptativa: Cambia de comportamiento según el contexto
+
+- Escape Eficiente: Usa movimiento perpendicular para salir de mínimos locales
+
+- Trayectoria Optimizada: Encuentra caminos que los campos potenciales puros no pueden
