@@ -1,3 +1,104 @@
+## 📚 Librerías de Datos
+
+###  <img src="https://pandas.pydata.org/static/img/pandas.svg" width="150">
+
+Biblioteca fundamental para manipulación y análisis de datos en Python
+
+- Estructuras de datos DataFrame y Series
+
+- Herramientas para lectura/escritura de múltiples formatos
+
+- Operaciones de limpieza, transformación y agregación de datos
+
+- Integración con otras bibliotecas científicas
+
+
+### <img src="https://geopandas.org/en/stable/_images/geopandas_icon.png" width="100"> GeoPandas
+
+Extensión de pandas para datos geoespaciales
+
+- Operaciones geométricas espaciales
+
+- Integración con shapely y Fiona
+
+- Visualización de mapas
+
+### <img src="https://networkx.org/_static/networkx_logo.svg" width="150">
+
+Biblioteca para creación, manipulación y estudio de grafos
+
+- Algoritmos de grafos
+
+- Estructuras de datos para redes
+
+- Visualización básica
+
+### 🦉 Ibis
+
+Framework de expresiones para big data
+
+- Sintaxis tipo pandas para backends distribuidos
+
+- Soporte para múltiples motores (BigQuery, Spark, etc.)
+
+- Ejecución perezosa (lazy evaluation)
+
+### 🦆 DuckDB
+
+Base de datos analytical in-process
+
+- SQL para análisis de datos
+
+- Alta performance en consultas analíticas
+
+- Integración directa con pandas
+
+---
+
+
+## 🎨 Librerías de Visualización
+
+### 📊 matplotlib
+
+Biblioteca de visualización fundamental en Python
+
+- Gráficos 2D de alta calidad
+
+- Altamente personalizable
+
+- Base para muchas otras bibliotecas
+
+### 🌐 Bokeh
+
+Visualizaciones interactivas para navegadores web
+
+- Gráficos interactivos
+
+- Aplicaciones web dashboard
+
+- Streaming de datos
+
+### <img src="https://holoviews.org/_static/logo.png" width="40"> HoloViews
+
+Visualización declarativa de datos
+
+- Sintaxis declarativa
+
+- Anotaciones de datos ricas
+
+- Backends múltiples (Bokeh, matplotlib)
+
+
+### <img src="https://streamlit.io/images/brand/streamlit-logo-primary-colormark-darktext.png" width="150">
+
+Framework para aplicaciones web de data science
+
+- Creación rápida de dashboards
+
+- Scripts Python puros
+
+- Interactividad nativa
+
 ## 🧠 Modelo BDI para Toma de Decisiones en Planificación de Trayectorias
 
 ## 🤖 Agente Inteligente
