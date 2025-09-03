@@ -376,8 +376,11 @@ El código genera dos tipos de visualizaciones:
 
 - Animación GIF del proceso completo
 
+![Laboratori2](https://github.com/sharito2023s-oss/Laboratorio2/blob/main/animacion_bdi_herradura.gif?raw=true)
 
 - Imagen estática de la trayectoria final
+
+![Laboratori2](https://github.com/sharito2023s-oss/Laboratorio2/blob/main/trayectoria_final_bdi.png?raw=true)
 
 ### 📊 Resultados y Efectividad
 
